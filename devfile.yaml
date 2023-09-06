@@ -33,7 +33,7 @@ components:
           limits:
             nvidia.com/gpu: '1'
     container:
-    memoryLimit: 32Gi
+      memoryLimit: 32Gi
       env:
         - name: CHE_DASHBOARD_URL
           value: https://devspaces.apps.ocpsno2.davenet.local
