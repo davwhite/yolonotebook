@@ -28,10 +28,6 @@ components:
     attributes:
       controller.devfile.io/merge-contribution: true
       memoryLimit: 2Gi
-      container-overrides:
-        resources:
-          limits:
-            nvidia.com/gpu: '1'
     container:
       env:
         - name: CHE_DASHBOARD_URL
