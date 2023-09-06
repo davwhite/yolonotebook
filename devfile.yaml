@@ -27,8 +27,6 @@ components:
   - attributes:
       controller.devfile.io/merge-contribution: true
       memoryLimit: 2Gi
-      deployment/nvidia.com/gpu: '1'
-      deployment/nvidia.com/gpu.count: '1'
     container:
       env:
         - name: CHE_DASHBOARD_URL
@@ -46,6 +44,14 @@ components:
       image: registry.redhat.io/devspaces/udi-rhel8@sha256:a5a67003870daf10f941b0279a065358dd1ace6d40826462b91bae9868216eff
       sourceMapping: /projects
     name: universal-developer-image
+  - name: my-devspace
+    type: container
+    image: your-custom-gpu-image:tag
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+      requests:
+        nvidia.com/gpu: 1
   - attributes:
       controller.devfile.io/merge-contribution: false
       deployment/nvidia.com/gpu: '1'
