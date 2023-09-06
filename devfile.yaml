@@ -27,6 +27,8 @@ components:
   - attributes:
       controller.devfile.io/merge-contribution: true
       memoryLimit: 2Gi
+      deployment/nvidia.com/gpu: '1'
+      deployment/nvidia.com/gpu.count: '1'
     container:
       env:
         - name: CHE_DASHBOARD_URL
