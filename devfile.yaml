@@ -24,26 +24,6 @@ projects:
         origin: https://github.com/redhat-na-ssa/flyingthings.git
     name: flying-notebooks
 components:
-  - name: universal-developer-image
-    attributes:
-      controller.devfile.io/merge-contribution: true
-      memoryLimit: 2Gi
-    container:
-      env:
-        - name: CHE_DASHBOARD_URL
-          value: https://devspaces.apps.ocpsno2.davenet.local
-        - name: CHE_PLUGIN_REGISTRY_URL
-          value: https://devspaces.apps.ocpsno2.davenet.local/plugin-registry/v3
-        - name: CHE_PLUGIN_REGISTRY_INTERNAL_URL
-          value: http://plugin-registry.devspaces.svc:8080/v3
-        - name: CLUSTER_CONSOLE_URL
-          value: https://console-openshift-console.apps.ocpsno2.davenet.local
-        - name: CLUSTER_CONSOLE_TITLE
-          value: OpenShift console
-        - name: OPENVSX_REGISTRY_URL
-          value: ''
-      image: registry.redhat.io/devspaces/udi-rhel8@sha256:a5a67003870daf10f941b0279a065358dd1ace6d40826462b91bae9868216eff
-      sourceMapping: /projects
   - name: my-devspace
     attributes:
       controller.devfile.io/merge-contribution: false
@@ -106,3 +86,23 @@ components:
       image: quay.io/dawhite20910/devspace-yolo:latest
       sourceMapping: /projects
     name: my-custom
+  - name: universal-developer-image
+    attributes:
+      controller.devfile.io/merge-contribution: true
+      memoryLimit: 2Gi
+    container:
+      env:
+        - name: CHE_DASHBOARD_URL
+          value: https://devspaces.apps.ocpsno2.davenet.local
+        - name: CHE_PLUGIN_REGISTRY_URL
+          value: https://devspaces.apps.ocpsno2.davenet.local/plugin-registry/v3
+        - name: CHE_PLUGIN_REGISTRY_INTERNAL_URL
+          value: http://plugin-registry.devspaces.svc:8080/v3
+        - name: CLUSTER_CONSOLE_URL
+          value: https://console-openshift-console.apps.ocpsno2.davenet.local
+        - name: CLUSTER_CONSOLE_TITLE
+          value: OpenShift console
+        - name: OPENVSX_REGISTRY_URL
+          value: ''
+      image: registry.redhat.io/devspaces/udi-rhel8@sha256:a5a67003870daf10f941b0279a065358dd1ace6d40826462b91bae9868216eff
+      sourceMapping: /projects
