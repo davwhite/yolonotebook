@@ -28,6 +28,10 @@ components:
     attributes:
       controller.devfile.io/merge-contribution: true
       memoryLimit: 2Gi
+      container-overrides:
+        resources:
+          limits:
+            nvidia.com/gpu: '1'
     container:
       env:
         - name: CHE_DASHBOARD_URL
@@ -47,9 +51,11 @@ components:
   - name: my-devspace
     attributes:
       controller.devfile.io/merge-contribution: false
-      deployment/nvidia.com/gpu: '1'
-      deployment/nvidia.com/gpu.count: '1'
       memoryLimit: 32Gi
+      container-overrides:
+        resources:
+          limits:
+            nvidia.com/gpu: '1'
     container:
       args:
         - '-f'
