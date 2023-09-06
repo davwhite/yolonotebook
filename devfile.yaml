@@ -21,8 +21,8 @@ attributes:
 projects:
   - git:
       remotes:
-        origin: https://github.com/davwhite/yolonotebook.git
-    name: yolonotebooks
+        origin: https://github.com/redhat-na-ssa/flyingthings.git
+    name: flying-notebooks
 components:
   - name: universal-developer-image
     attributes:
